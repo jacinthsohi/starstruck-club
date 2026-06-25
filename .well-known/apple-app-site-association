@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["99Z3Y4AS2E.place.beverly.Starstruck"],
+        "components": [
+          { "/": "/s/*", "comment": "Friend invite links: starstruck.club/s/<CODE>" }
+        ]
+      }
+    ]
+  }
+}
