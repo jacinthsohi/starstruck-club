@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Starstruck — You're invited</title>
+  <style>
+    html,body{margin:0;height:100%;background:#6b1f2a;color:#f7f1e6;
+      font-family:Georgia,'Times New Roman',serif;display:flex;align-items:center;justify-content:center;text-align:center}
+    .wrap{padding:2rem;max-width:520px}
+    h1{font-size:2.6rem;font-style:italic;margin:0 0 .4rem}
+    .sub{font-family:-apple-system,Helvetica,Arial,sans-serif;letter-spacing:.16em;
+      text-transform:uppercase;font-size:.78rem;opacity:.72;margin:0 0 1.6rem}
+    .codebox{display:none;margin:0 0 1.6rem}
+    .codelabel{font-family:-apple-system,Helvetica,Arial,sans-serif;letter-spacing:.16em;
+      text-transform:uppercase;font-size:.7rem;opacity:.7;margin:0 0 .5rem}
+    .code{font-size:2rem;letter-spacing:.25em;background:rgba(247,241,230,.12);
+      border:1px solid rgba(247,241,230,.3);border-radius:12px;padding:.6rem 1.1rem;display:inline-block}
+    a.btn{display:inline-block;background:#f7f1e6;color:#6b1f2a;text-decoration:none;
+      font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:600;padding:.85rem 1.7rem;border-radius:10px}
+    .hint{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:.85rem;opacity:.75;
+      margin-top:1.4rem;line-height:1.55}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 id="title">You're invited</h1>
+    <p class="sub" id="subtitle">to Starstruck — a journal of starred dining</p>
+    <div class="codebox" id="codebox">
+      <div class="codelabel">Your friend's invite code</div>
+      <div class="code" id="code"></div>
+    </div>
+    <div><a class="btn" href="https://testflight.apple.com/join/96nFHqVK">Get the beta</a></div>
+    <p class="hint" id="hint">Install the app, then add your friend under Friends &rarr; Add a friend using the code above.</p>
+  </div>
+  <script>
+    var m = location.pathname.match(/\/s\/([A-Za-z0-9]+)/);
+    if (m) {
+      document.getElementById('code').textContent = m[1].toUpperCase();
+      document.getElementById('codebox').style.display = 'block';
+    } else {
+      document.getElementById('title').textContent = 'Starstruck';
+      document.getElementById('subtitle').textContent = 'A journal of starred dining';
+      document.getElementById('hint').textContent = 'Install the beta to start your dining journal.';
+    }
+  </script>
+</body>
+</html>
