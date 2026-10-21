@@ -30,7 +30,15 @@
   </div>
   <script>
     // Launched 2026-10-21: App Store listing (Apple ID 6783965652).
+    // Campaign attribution: /get?c=card adds Apple's campaign parameters so
+    // App Store Connect > App Analytics > Campaigns reports downloads per source
+    // (business card, Instagram, email...). PT is the provider token from
+    // App Analytics > Campaigns > Generate Campaign Link; until it is set,
+    // only the plain store link is used.
+    var PT = "";
     var STORE_URL = "https://apps.apple.com/app/id6783965652";
+    var campaign = (new URLSearchParams(location.search).get('c') || '').replace(/[^a-z0-9_-]/gi, '').slice(0, 40);
+    if (PT && campaign) STORE_URL += "?pt=" + PT + "&ct=" + encodeURIComponent(campaign) + "&mt=8";
     document.getElementById('store').href = STORE_URL;
     location.replace(STORE_URL);
   </script>
